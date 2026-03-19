@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
     @Modifying
@@ -17,4 +19,7 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
     void addProduct(@Param("name_product")String nameProduct,
                     @Param("description_product")String descriptionProduct,
                     @Param("price_unid_product")String priceUnidProduct);
+
+    @Override
+    List<ProductEntity> findAllById(Iterable<Integer> integers);
 }

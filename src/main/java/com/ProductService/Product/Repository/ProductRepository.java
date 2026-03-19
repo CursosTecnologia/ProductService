@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
     @Modifying
     @Transactional
-    @Query(value = "INTO sh_venta.tb_product (name_product, description_product, price_unid_product)" +
+    @Query(value = "INSERT INTO sh_venta.tb_product (name_product, description_product, price_unid_product)" +
     "VALUES (:name_product, :description_product, :price_unid_product);",nativeQuery = true)
     void addProduct(@Param("name_product")String nameProduct,
                     @Param("description_product")String descriptionProduct,

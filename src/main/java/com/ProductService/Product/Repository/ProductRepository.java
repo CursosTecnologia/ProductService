@@ -20,6 +20,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
                     @Param("description_product")String descriptionProduct,
                     @Param("price_unid_product")Double priceUnidProduct);
 
-    @Override
-    List<ProductEntity> findAllById(Iterable<Integer> integers);
+
+    List<ProductEntity> findAllByNameProduct(String nameProduct);
+
+    List<ProductEntity> findAllById(String idProduct);
 }

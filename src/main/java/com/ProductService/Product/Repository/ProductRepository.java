@@ -18,7 +18,7 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
     "VALUES (:name_product, :description_product, :price_unid_product);",nativeQuery = true)
     void addProduct(@Param("name_product")String nameProduct,
                     @Param("description_product")String descriptionProduct,
-                    @Param("price_unid_product")String priceUnidProduct);
+                    @Param("price_unid_product")Double priceUnidProduct);
 
     @Override
     List<ProductEntity> findAllById(Iterable<Integer> integers);

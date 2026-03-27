@@ -23,5 +23,9 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
 
     List<ProductEntity> findAllByNameProduct(String nameProduct);
 
-    List<ProductEntity> findAllById(String idProduct);
+//    @Query(value = "Select * from sh_venta.tb_product" +
+//            "Where id_Product = : id_Product;",nativeQuery = true)
+//    List<ProductEntity> findAllByIdProduct(@Param("id_Product") Integer idProduct);
+
+    List<ProductEntity> findAllByIdProduct(Integer idProduct);
 }

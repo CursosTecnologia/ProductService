@@ -10,9 +10,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDTO {
+    private Integer idProduct;
     private String nameProduct;
     private String descriptionProduct;
     private Double priceUnidProduct;
 
-
+    public ProductDTO(String nameProduct, String descriptionProduct, Double priceUnidProduct) {
+        this.nameProduct = nameProduct;
+        this.descriptionProduct = descriptionProduct;
+        this.priceUnidProduct = priceUnidProduct;
+    }
 }
